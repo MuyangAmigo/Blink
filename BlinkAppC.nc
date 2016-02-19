@@ -60,10 +60,10 @@ implementation
   components new DemoSensorC() as Sensor;
   components new HamamatsuS10871TsrC() as LumSensor;
 
-  BlinkC.Timer0 -> Timer0;
-  BlinkC.Timer1 -> Timer1;
   BlinkC.Boot -> MainC;
   BlinkC.Leds -> LedsC;
+  BlinkC.Timer0 -> Timer0;
+  BlinkC.Timer1 -> Timer1;
   BlinkC.ReadTemp -> Sensor;
   BlinkC.ReadLum -> LumSensor;
 

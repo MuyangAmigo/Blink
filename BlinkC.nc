@@ -52,10 +52,10 @@
 
 module BlinkC @safe ()
 {
-  uses interface Timer<TMilli> as Timer0;
-  uses interface Timer<TMilli> as Timer1;
   uses interface Leds;
   uses interface Boot;
+  uses interface Timer<TMilli> as Timer0;
+  uses interface Timer<TMilli> as Timer1;
   uses interface Read<uint16_t> as ReadTemp;
   uses interface Read<uint16_t> as ReadLum;
 }
@@ -71,7 +71,6 @@ implementation
 
   event void Timer0.fired()
   {
-    //dbg("BlinkC", "Timer 0 fired @ %s.\n", sim_time_string());
     call ReadTemp.read();
   }
 
